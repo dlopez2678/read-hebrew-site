@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study-Hebrew</title>
+  <link rel="stylesheet" href="study-hebrew.css">
+</head>
+<body id="learningPageBody">
+  <header>
+    <div class="mainHeader">
+      <a href="index.html">
+        <h2>ה</h2>
+      </a>
+      <h1>Welcome to Read Hebrew</h1>
+      <div class="headerProfile">
+        <p id="headerUsername">username</p>
+        <button type="button">Profile Img</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="dropDownMenu">
+      <button type="button" class="menuBtn" onclick="dropMenu()" id="menuBtn">Menu</button>
+      <div class="menuContentBtns" id="menuContentBtns">
+        <button type="button" class="contentBtn topBtn" onclick="instructionsSel()">Instructions</button>
+        <button type="button" class="contentBtn" onclick="LettersSel()">Letters</button>
+        <button type="button" class="contentBtn" onclick="vowelsSel()">Vowels</button>
+        <button type="button" class="contentBtn bottomBtn" onclick="lettersVowelsSel()">Letters & Vowels</button>
+      </div>
+    </div>
+    <h2 id="notifyText"></h2>
+    <section class="flashCard">
+      <img src="" alt="" class="imgResult" id="resultImage">
+      <div id="letterName"></div>
+      <div id="letterSymbol"></div>
+      <div id="letterVowel"></div>
+      <div id="letterDiction"></div>
+    </section>
+    <div class="bottomButtons">
+      <button type="button" class="btn btnReset" onclick="reset()" id="resetBtn">Reset</button>
+      <div class="counterContainer">
+        <div class="counterHeadContainer">
+          <h5 class="textAlign-R">Attempts</h5>
+          <p>|</p>
+          <h5>Correct</h5>
+        </div>
+        <div class="resultsContainer">
+          <p id="attemptsDisplay" class="countDisplayer">10</p>
+          <p>|</p>
+          <p id="correctDisplay" class="countDisplayer">9</p>
+        </div>
+      </div>
+      <button type="button" class="btn" id="nextBtn">Next</button>
+    </div>
+  </main>
+  <footer></footer>
+  
+  <script src="study-hebrew.js"></script>
+</body>
+</html>
