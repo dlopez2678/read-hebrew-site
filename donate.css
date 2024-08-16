@@ -59,6 +59,11 @@ main p {
 .donationContainer form {
   font-size: 3rem;
 }
+.boxShadow {
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px gray;
+}
 .paypalBtn {
   width: 13rem;
 }
