@@ -42,7 +42,8 @@ header h4 {
 main {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  align-items: center;
+  gap: 2rem;
   max-width: 80%;
   margin: auto;
   line-height: 1.8rem;
@@ -50,6 +51,16 @@ main {
 main h1 {
   font-size: 4rem;
   margin: auto;
+}
+main p {
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+}
+.donationContainer form {
+  font-size: 3rem;
+}
+.paypalBtn {
+  width: 13rem;
 }
 /* Footer Section --------------------------------------------*/
 footer {
