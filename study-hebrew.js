@@ -14,10 +14,6 @@ const resultImage = document.getElementById("resultImage");
 const learningPageBody = document.getElementById("learningPageBody");
 
 
-// Global Variable to hold what random letters have been shown then reset at the end.
-let letterShownList = [];
-let vowelShownList = [];
-
 // Click iterator used to display notify message from array
 let clickIter = 0;
 
@@ -77,22 +73,23 @@ function letterOnlyGame() {
   // String Array used to guide the guessing game forward.
   const notifyTextDisplay = ["What Letter is It?", "What Sound Does It Make?", "Where You Correct on All?"]
 
-  // notifyText.textContent = notifyTextDisplay[clickIter];
+  letterVowelListAssign(flashCardLetters);
   
   if(clickIter === 0) {
     refreshDisplay();
     notifications(notifyTextDisplay, clickIter);
-    randomIndex = getRandomIndex(flashCardLetters);
-    letterSymbol.innerHTML = flashCardLetters[randomIndex].hLetterSymbol;
+    randomIndex = getRandomIndex(listOfRemainingCards);
+    letterSymbol.innerHTML = listOfRemainingCards[randomIndex].hLetterSymbol;
     clickIter++;
   } else if(clickIter === 1){
     notifications(notifyTextDisplay, clickIter);
-    letterName.textContent = flashCardLetters[randomIndex].hLetterName;
+    letterName.textContent = listOfRemainingCards[randomIndex].hLetterName;
     clickIter++;
   } else if(clickIter === 2){
     notifications(notifyTextDisplay, clickIter);
-    letterDiction.textContent = flashCardLetters[randomIndex].hLetterDiction;
+    letterDiction.textContent = listOfRemainingCards[randomIndex].hLetterDiction;
     resultsDisplayCounter(notifyTextDisplay.length);
+    listOfRemainingCards.splice(randomIndex, 1);
     clickIter = 0;
   }
 }
@@ -101,18 +98,19 @@ function vowelsOnlyGame() {
   // String Array used to guide the guessing game forward.
   const notifyTextDisplay = ["What Vowel Sound?", "Where You Correct?"]
 
-  // notifyText.textContent = notifyTextDisplay[clickIter];
+  letterVowelListAssign(flashCardVowels);
   
   if(clickIter === 0) {
     refreshDisplay();
     notifyText.textContent = notifyTextDisplay[clickIter];
-    randomIndex = getRandomIndex(flashCardVowels);
-    letterSymbol.innerHTML = flashCardVowels[randomIndex].hVowel;
+    randomIndex = getRandomIndex(listOfRemainingCards);
+    letterSymbol.innerHTML = listOfRemainingCards[randomIndex].hVowel;
     clickIter++;
   } else if(clickIter === 1){
     notifications(notifyTextDisplay, clickIter);
-    letterDiction.textContent = flashCardVowels[randomIndex].hVowelDiction;
+    letterDiction.textContent = listOfRemainingCards[randomIndex].hVowelDiction;
     resultsDisplayCounter(notifyTextDisplay.length);
+    listOfRemainingCards.splice(randomIndex, 1);
     clickIter = 0;
   }
 }
@@ -122,7 +120,6 @@ function lettersVowelsGame() {
   const notifyTextDisplay = ["Sound it Out!", "Where You Correct?"]
 
   notifyText.textContent = notifyTextDisplay[clickIter];
-  
   
   if(clickIter === 0) {
     refreshDisplay();
@@ -137,6 +134,13 @@ function lettersVowelsGame() {
     letterDiction.textContent = flashCardLetters[randomIndexLetter].hLetterDiction + "-" + flashCardVowels[randomIndexVowel].hVowelDiction;
     resultsDisplayCounter(notifyTextDisplay.length);
     clickIter = 0;
+  }
+}
+
+// This function copies const array to listofremaingcards array which will have elements taken out of it till reaching 0 length through out the games.
+function letterVowelListAssign(gameChoice){
+  if(listOfRemainingCards.length === 0) {
+    listOfRemainingCards = [...gameChoice];
   }
 }
 
@@ -161,16 +165,8 @@ function reset(){
   refreshDisplay();
   setBtnsToPriorState();
   notifyText.textContent = "Click Next to Start!"
-  // switch(nextBtn.onclick){
-  //   case letterOnlyGame:
-  //     letterOnlyGame();
-  //     break;
-  //   case vowelsOnlyGame:
-  //     vowelsOnlyGame();
-  //     break;
-  //   default: 
-  //     break;
-  // }
+  listOfRemainingCards.splice(0);
+  console.log(`List Length: ${listOfRemainingCards.length}`)
 }
 
  function notifications(arrayMessages, iterator){
