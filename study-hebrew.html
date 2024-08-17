@@ -21,12 +21,12 @@
   </header>
   <main>
     <div class="dropDownMenu">
-      <button type="button" class="menuBtn" onclick="dropMenu()" id="menuBtn">Menu</button>
+      <button type="button" class="menuBtn" id="menuBtn">Menu</button>
       <div class="menuContentBtns" id="menuContentBtns">
-        <button type="button" class="contentBtn topBtn" onclick="instructionsSel()">Instructions</button>
-        <button type="button" class="contentBtn" onclick="LettersSel()">Letters</button>
-        <button type="button" class="contentBtn" onclick="vowelsSel()">Vowels</button>
-        <button type="button" class="contentBtn bottomBtn" onclick="lettersVowelsSel()">Letters & Vowels</button>
+        <button type="button" class="contentBtn topBtn" id="instructBtn">Instructions</button>
+        <button type="button" class="contentBtn" id="letterBtn">Letters</button>
+        <button type="button" class="contentBtn" id="vowelBtn">Vowels</button>
+        <button type="button" class="contentBtn bottomBtn" id="letterVowelBtn">Letters & Vowels</button>
       </div>
     </div>
     <h2 id="notifyText"></h2>
@@ -38,7 +38,7 @@
       <div id="letterDiction"></div>
     </section>
     <div class="bottomButtons">
-      <button type="button" class="btn btnReset" onclick="reset()" id="resetBtn">Reset</button>
+      <button type="button" class="btn btnReset" id="resetBtn">Reset</button>
       <div class="counterContainer">
         <div class="counterHeadContainer">
           <h5 class="textAlign-R">Attempts</h5>
@@ -56,6 +56,6 @@
   </main>
   <footer></footer>
   
-  <script src="study-hebrew.js"></script>
+  <script src="study-hebrew.js" type="module"></script>
 </body>
 </html>

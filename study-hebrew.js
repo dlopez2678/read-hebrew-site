@@ -1,17 +1,38 @@
-// Const of the Flashcard Elements
-const notifyText = document.getElementById("notifyText");
-const letterName = document.getElementById("letterName");
-const letterSymbol = document.getElementById("letterSymbol");
-const letterVowel = document.getElementById("letterVowel");
-const letterDiction = document.getElementById("letterDiction");
-const menuContentBtns = document.getElementById("menuContentBtns");
-const menuBtn = document.getElementById("menuBtn");
-const nextBtn = document.getElementById("nextBtn");
-const resetBtn = document.getElementById("resetBtn");
-const attemptsDisplay = document.getElementById("attemptsDisplay");
-const correctDisplay = document.getElementById("correctDisplay");
-const resultImage = document.getElementById("resultImage");
-const learningPageBody = document.getElementById("learningPageBody");
+import {flashCardLetters, flashCardVowels} from './hebrew_data.js';
+
+//Because this file is a module I must wait for window load to assign the elements and functions to them.
+window.onload = function(){
+  const menuBtn = document.getElementById("menuBtn");
+  menuBtn.addEventListener("click", dropMenu);
+
+  const instructBtn = document.getElementById("instructBtn");
+  instructBtn.addEventListener('click', instructionsSel);
+
+  const letterBtn = document.getElementById("letterBtn");
+  letterBtn.addEventListener('click', lettersSel);
+
+  const vowelBtn = document.getElementById("vowelBtn");
+  vowelBtn.addEventListener('click', vowelsSel);
+
+  const letterVowelBtn = document.getElementById("letterVowelBtn");
+  letterVowelBtn.addEventListener('click', lettersVowelsSel);
+  
+  const resetBtn = document.getElementById("resetBtn");
+  resetBtn.addEventListener('click', reset);
+
+ // Const of the Flashcard Elements
+  const notifyText = document.getElementById("notifyText");
+  const letterName = document.getElementById("letterName");
+  const letterSymbol = document.getElementById("letterSymbol");
+  const letterVowel = document.getElementById("letterVowel");
+  const letterDiction = document.getElementById("letterDiction");
+  const menuContentBtns = document.getElementById("menuContentBtns");
+  const nextBtn = document.getElementById("nextBtn");
+  const attemptsDisplay = document.getElementById("attemptsDisplay");
+  const correctDisplay = document.getElementById("correctDisplay");
+  const resultImage = document.getElementById("resultImage");
+  const learningPageBody = document.getElementById("learningPageBody");
+}
 
 
 // Click iterator used to display notify message from array
@@ -36,29 +57,6 @@ let correctCount = 0;
 let priorResetBtnFunc;
 let priorNextBtnFunc;
 
-// Const Objects for Each Hebrew Letter
-const flashCardLetters = [
-  {
-    hLetterName: "Alef",
-    hLetterSymbol: '&#1488;',
-    hLetterDiction: "Silent"
-  },
-  {
-    hLetterName: "Bet",
-    hLetterSymbol: '&#64305;',
-    hLetterDiction: "B"
-  },
-]
-const flashCardVowels = [
-  {
-    hVowel: '&#1464;',
-    hVowelDiction: "AH"
-  },
-  {
-    hVowel: '&#1467;',
-    hVowelDiction: "OO"
-  }
-]
 // Code to run reset function at page load up.
 document.addEventListener("DOMContentLoaded", reset());
 
@@ -68,9 +66,10 @@ document.addEventListener('click', e => {
     menuContentBtns.classList.remove("menuDropDownVisible");
   } 
 })
+
 // The Selected Learning Game Functions area letterOnlyGame, vowelOnlyGame, and letterVowelsGame
 function letterOnlyGame() {
-  // String Array used to guide the guessing game forward.
+  
   const notifyTextDisplay = ["What Letter is It?", "What Sound Does It Make?", "Where You Correct on All?"]
 
   letterVowelListAssign(flashCardLetters);
@@ -166,7 +165,6 @@ function reset(){
   setBtnsToPriorState();
   notifyText.textContent = "Click Next to Start!"
   listOfRemainingCards.splice(0);
-  console.log(`List Length: ${listOfRemainingCards.length}`)
 }
 
  function notifications(arrayMessages, iterator){
@@ -244,7 +242,7 @@ function reset(){
  }
 
 //  Drop Down Menu Selection Code to play different learning modes. 
- function LettersSel() {
+ function lettersSel() {
    reset();
    const curState = "Letters";
    updateMenuBtnState(curState);
@@ -272,5 +270,9 @@ function reset(){
     nextBtn.onclick = lettersVowelsGame;
     lettersVowelsGame();
   }
+ }
+
+ function instructionsSel(){
+  // TODO:Make this!
  }
 
