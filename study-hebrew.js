@@ -17,10 +17,10 @@ window.onload = function(){
   const letterVowelBtn = document.getElementById("letterVowelBtn");
   letterVowelBtn.addEventListener('click', lettersVowelsSel);
   
+  
+  
+  // Const of the Flashcard Elements
   const resetBtn = document.getElementById("resetBtn");
-  resetBtn.addEventListener('click', reset);
-
- // Const of the Flashcard Elements
   const notifyText = document.getElementById("notifyText");
   const letterName = document.getElementById("letterName");
   const letterSymbol = document.getElementById("letterSymbol");
@@ -244,6 +244,7 @@ function reset(){
 //  Drop Down Menu Selection Code to play different learning modes. 
  function lettersSel() {
    reset();
+   resetBtn.onclick = reset;
    const curState = "Letters";
    updateMenuBtnState(curState);
    if(!(nextBtn.onclick === letterOnlyGame)){
@@ -254,6 +255,7 @@ function reset(){
 
  function vowelsSel(){
   reset();
+  resetBtn.onclick = reset;
   const curState = "Vowels";
   updateMenuBtnState(curState);
   if(!(nextBtn.onclick === vowelsOnlyGame)){
@@ -264,6 +266,7 @@ function reset(){
 
  function lettersVowelsSel(){
   reset();
+  resetBtn.onclick = reset;
   const curState = "Letters & Vowels";
   updateMenuBtnState(curState);
   if(!(nextBtn.onclick === lettersVowelsGame)){
