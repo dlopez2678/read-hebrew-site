@@ -172,3 +172,5 @@ export const flashCardVowels = [
     hVowelDiction: "OO"
   }
 ]
+
+export const instructionsHTML = "<div style=display:flex;flex-direction:column><h2 style='font-size:3rem; margin:auto';>How to Start</h2><div style='font-size:1.2rem; line-height:1.7rem'><p>To start learning how to read Hebrew do as follows:</p><ol><li>Click on on the <strong>'Instructions'</strong> button above.</li><li>Choose which set of flashcards you would like to learn first, feel free to choose as you wish.<br><strong style='font-style:italic'>*Opinion</strong> (If you are new to Hebrew I suggest starting out with learning the 'Letters' first, then move on to the 'Vowels', and then both 'Letters and Vowels')</li><li>Once you have chosen the set of flashcards, follow the instructions on the top of the flashcard. It will guide you through each one.</li><li>When you finish the guessing instructions of the card, you will be asked if you correctly answered 'ALL' questions.</li> <li>Be honest and click yes or no, as this will tally how many times out of how many tries you have been correct at the bottom score keeper.</li></ol></div>";

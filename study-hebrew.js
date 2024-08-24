@@ -1,4 +1,4 @@
-import {flashCardLetters, flashCardVowels} from './hebrew_data.js';
+import {flashCardLetters, flashCardVowels, instructionsHTML} from './hebrew_data.js';
 
 //Because this file is a module I must wait for window load to assign the elements and functions to them.
 window.onload = function(){
@@ -17,8 +17,6 @@ window.onload = function(){
   const letterVowelBtn = document.getElementById("letterVowelBtn");
   letterVowelBtn.addEventListener('click', lettersVowelsSel);
   
-  
-  
   // Const of the Flashcard Elements
   const resetBtn = document.getElementById("resetBtn");
   const notifyText = document.getElementById("notifyText");
@@ -32,8 +30,8 @@ window.onload = function(){
   const correctDisplay = document.getElementById("correctDisplay");
   const resultImage = document.getElementById("resultImage");
   const learningPageBody = document.getElementById("learningPageBody");
+  const btnCountContainer = document.getElementById("btnCountContainer");
 }
-
 
 // Click iterator used to display notify message from array
 let clickIter = 0;
@@ -58,7 +56,7 @@ let priorResetBtnFunc;
 let priorNextBtnFunc;
 
 // Code to run reset function at page load up.
-document.addEventListener("DOMContentLoaded", reset());
+document.addEventListener("DOMContentLoaded", instructionsSel());
 
 // This is to close the drop down menu by clicking anywhere but the dropdown menu itself. 
 document.addEventListener('click', e => {
@@ -241,12 +239,43 @@ function reset(){
   }
  }
 
+ 
+ function toggleBottomButtons(){
+  if(btnCountContainer.style.display === ""){
+    btnCountContainer.style.display = "none";
+    letterName.style.display = "none";
+    letterSymbol.style.display = "none";
+    letterVowel.style.display = "none";
+    letterDiction.style.display = "none";
+    document.querySelector(".flashCard").insertAdjacentHTML('afterbegin', instructionsHTML); 
+  }else if(btnCountContainer.style.display === "none" && menuState !== "Instructions"){
+    btnCountContainer.style.display = "flex";
+    letterName.style.display = "block";
+    letterSymbol.style.display = "block";
+    letterVowel.style.display = "block";
+    letterDiction.style.display = "block";
+    deleteFlashCard();
+  }else if (btnCountContainer.style.display === "flex" && menuState === "Instructions"){
+    btnCountContainer.style.display = "none";
+    letterName.style.display = "none";
+    letterSymbol.style.display = "none";
+    letterVowel.style.display = "none";
+    letterDiction.style.display = "none";
+    document.querySelector(".flashCard").insertAdjacentHTML('afterbegin', instructionsHTML);
+  }
+ }
+
+ function deleteFlashCard(){
+  const flashCardContent = document.querySelector(".flashCard");
+  flashCardContent.firstChild.remove();
+ }
+
 //  Drop Down Menu Selection Code to play different learning modes. 
  function lettersSel() {
+  updateMenuBtnState("Letters");
+  toggleBottomButtons();
    reset();
    resetBtn.onclick = reset;
-   const curState = "Letters";
-   updateMenuBtnState(curState);
    if(!(nextBtn.onclick === letterOnlyGame)){
      nextBtn.onclick = letterOnlyGame;
     letterOnlyGame();
@@ -254,10 +283,10 @@ function reset(){
  }
 
  function vowelsSel(){
+  updateMenuBtnState("Vowels");
+  toggleBottomButtons();
   reset();
   resetBtn.onclick = reset;
-  const curState = "Vowels";
-  updateMenuBtnState(curState);
   if(!(nextBtn.onclick === vowelsOnlyGame)){
     nextBtn.onclick = vowelsOnlyGame;
     vowelsOnlyGame();
@@ -265,10 +294,10 @@ function reset(){
  }
 
  function lettersVowelsSel(){
+  updateMenuBtnState("Letters & Vowels");
+  toggleBottomButtons();
   reset();
   resetBtn.onclick = reset;
-  const curState = "Letters & Vowels";
-  updateMenuBtnState(curState);
   if(!(nextBtn.onclick === lettersVowelsGame)){
     nextBtn.onclick = lettersVowelsGame;
     lettersVowelsGame();
@@ -277,5 +306,11 @@ function reset(){
 
  function instructionsSel(){
   // TODO:Make this!
+  updateMenuBtnState("Instructions");
+  toggleBottomButtons();
+  reset();
+  notifyText.textContent = "";
+  
  }
+
 
