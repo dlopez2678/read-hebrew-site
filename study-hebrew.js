@@ -124,16 +124,32 @@ function lettersVowelsGame() {
     randomIndexLetter = getRandomIndex(flashCardLetters);
     letterSymbol.innerHTML = flashCardLetters[randomIndexLetter].hLetterSymbol;
     randomIndexVowel = getRandomIndex(flashCardVowels);
-    letterVowel.innerHTML = flashCardVowels[randomIndexVowel].hVowel;
+    letterVowel.innerHTML = vowelReturnDisplay(randomIndexLetter, randomIndexVowel);
     clickIter++;
   } else if(clickIter === 1){
     notifications(notifyTextDisplay, clickIter);
-    letterDiction.textContent = flashCardLetters[randomIndexLetter].hLetterDiction + "-" + flashCardVowels[randomIndexVowel].hVowelDiction;
+    letterDiction.textContent = vowelReturnLetters(randomIndexLetter, randomIndexVowel);
     resultsDisplayCounter(notifyTextDisplay.length);
     clickIter = 0;
   }
 }
 
+
+function vowelReturnDisplay(letterIndex, vowelIndex) {
+  if(!flashCardLetters[letterIndex].hLetterName.includes("Final")){
+    return flashCardVowels[vowelIndex].hVowel;
+  }else {
+    return "";
+  }
+}
+
+function vowelReturnLetters(letterIndex, vowelIndex){
+  if(!flashCardLetters[letterIndex].hLetterName.includes("Final")){
+    return flashCardLetters[letterIndex].hLetterDiction + "-" + flashCardVowels[vowelIndex].hVowelDiction;
+  }else {
+    return flashCardLetters[letterIndex].hLetterDiction;
+  }
+}
 // This function copies const array to listofremaingcards array which will have elements taken out of it till reaching 0 length through out the games.
 function letterVowelListAssign(gameChoice){
   if(listOfRemainingCards.length === 0) {
