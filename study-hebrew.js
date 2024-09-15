@@ -105,7 +105,8 @@ function vowelsOnlyGame() {
     clickIter++;
   } else if(clickIter === 1){
     notifications(notifyTextDisplay, clickIter);
-    letterDiction.textContent = listOfRemainingCards[randomIndex].hVowelDiction;
+    letterName.textContent = listOfRemainingCards[randomIndex].hVowelName;
+    letterDiction.innerHTML = listOfRemainingCards[randomIndex].hVowelDiction;
     resultsDisplayCounter(notifyTextDisplay.length);
     listOfRemainingCards.splice(randomIndex, 1);
     clickIter = 0;

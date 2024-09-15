@@ -164,12 +164,64 @@ export const flashCardLetters = [
 
 export const flashCardVowels = [
   {
+    hVowelName: 'Kamatz',
     hVowel: '&#1464;',
     hVowelDiction: "AH"
   },
   {
+    hVowelName: 'Patach',
+    hVowel: '&#1463;',
+    hVowelDiction: "AH"
+  },
+  {
+    hVowelName: 'Segol',
+    hVowel: '&#1462;',
+    hVowelDiction: "EH"
+  },
+  {
+    hVowelName: 'Tzere',
+    hVowel: '&#1461;',
+    hVowelDiction: "EH"
+  },
+  {
+    hVowelName: 'Holam Male',
+    hVowel: '&#64331;',
+    hVowelDiction: "OH"
+  },
+  {
+    hVowelName: 'Kubutz',
     hVowel: '&#1467;',
     hVowelDiction: "OO"
+  },
+  {
+    hVowelName: 'Shuruk',
+    hVowel: '&#64309;',
+    hVowelDiction: "OO"
+  },
+  {
+    hVowelName: 'Hataf Patach',
+    hVowel: '&#1458;',
+    hVowelDiction: "AH"
+  },
+  {
+    hVowelName: 'Hiriq Haser',
+    hVowel: '&#1460;',
+    hVowelDiction: "EE"
+  },
+  {
+    hVowelName: 'Hataf Segol',
+    hVowel: '&#1457;',
+    hVowelDiction: "EH"
+  },
+  {
+    hVowelName: 'Hataf Kamatz',
+    hVowel: '&#1459;',
+    hVowelDiction: "AH"
+  },
+  {
+    hVowelName: 'Shva',
+    hVowel: '&#1456;',
+    hVowelDiction: 'EH / Silent <a style=text-decoration:underline href="https://www.youtube.com/watch?v=R4sB7dWIy9A" target="_blank">Learn More</a>'
   }
 ]
 
