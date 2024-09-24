@@ -161,14 +161,15 @@ main {
 }
 #letterSymbol {
   font-size: 9rem;
+  margin:auto;
   margin-top: 1rem;
-  margin-bottom: -1rem;
+  margin-bottom: 0rem;
 }
 #letterVowel {
   font-size: 9rem;
   margin-top: -9rem;
-  margin-right: 3rem;
-  border-bottom: 1px solid;
+  /* margin-right: 3rem; */
+  /* border-bottom: 1px solid; */
   margin-bottom: 4rem;
   height: 10rem;
 }

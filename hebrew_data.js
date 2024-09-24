@@ -165,62 +165,67 @@ export const flashCardLetters = [
 export const flashCardVowels = [
   {
     hVowelName: 'Kamatz',
-    hVowel: '&#1464;',
+    hVowel: '<p style="margin-right:1.8rem;">&#1464;</p>',
     hVowelDiction: "AH"
   },
   {
     hVowelName: 'Patach',
-    hVowel: '&#1463;',
+    hVowel: '<p style="margin-right:1.8rem;">&#1463;</p>',
     hVowelDiction: "AH"
   },
   {
     hVowelName: 'Segol',
-    hVowel: '&#1462;',
+    hVowel: '<p style="margin-right:2rem;">&#1462;</p>',
     hVowelDiction: "EH"
   },
   {
     hVowelName: 'Tzere',
-    hVowel: '&#1461;',
+    hVowel: '<p style="margin-right:2rem;">&#1461;</p>',
     hVowelDiction: "EH"
   },
   {
     hVowelName: 'Holam Male',
-    hVowel: '&#64331;',
+    hVowel: '<span style="display:inline-block; margin-top: -1.21rem">&#64331;</span>',
+    hVowelDiction: "OH"
+  },
+  {
+    hVowelName: 'Holam Haser',
+    hVowel: '<p style="margin-top: -1.21rem">&#1465;</p>',
     hVowelDiction: "OH"
   },
   {
     hVowelName: 'Kubutz',
-    hVowel: '&#1467;',
+    hVowel: '<p style="margin-right:2.7rem;">&#1467;</p>',
     hVowelDiction: "OO"
   },
   {
     hVowelName: 'Shuruk',
-    hVowel: '&#64309;',
+    hVowel: '<span style="display:inline-block; margin-top:-1.21rem">&#64309;</span>',
     hVowelDiction: "OO"
   },
   {
     hVowelName: 'Hataf Patach',
-    hVowel: '&#1458;',
+    hVowel: '<p style="margin-right:3rem;">&#1458;</p>',
     hVowelDiction: "AH"
   },
   {
+    hVowelName: 'Hataf Kamatz',
+    hVowel: '<p style="margin-right:3rem;">&#1459;</p>',
+    hVowelDiction: "OH"
+  },
+  {
     hVowelName: 'Hiriq Haser',
-    hVowel: '&#1460;',
+    hVowel: '<p style="margin-right:1rem;">&#1460;</p>',
     hVowelDiction: "EE"
   },
   {
     hVowelName: 'Hataf Segol',
-    hVowel: '&#1457;',
+    hVowel: '<p style="margin-right:3rem;">&#1457;</p>',
     hVowelDiction: "EH"
   },
   {
-    hVowelName: 'Hataf Kamatz',
-    hVowel: '&#1459;',
-    hVowelDiction: "AH"
-  },
-  {
     hVowelName: 'Shva',
-    hVowel: '&#1456;',
+    hVowel: '<p style="margin-right:1rem;">&#1456;</p>',
     hVowelDiction: 'EH / Silent <a style=text-decoration:underline href="https://www.youtube.com/watch?v=R4sB7dWIy9A" target="_blank">Learn More</a>'
   }
 ]

@@ -129,7 +129,7 @@ function lettersVowelsGame() {
     clickIter++;
   } else if(clickIter === 1){
     notifications(notifyTextDisplay, clickIter);
-    letterDiction.textContent = vowelReturnLetters(randomIndexLetter, randomIndexVowel);
+    letterDiction.innerHTML = vowelReturnLetters(randomIndexLetter, randomIndexVowel);
     resultsDisplayCounter(notifyTextDisplay.length);
     clickIter = 0;
   }
